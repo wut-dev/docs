@@ -1,7 +1,7 @@
 # wut.dev
 wut.dev is a 100% client-side, in-browser management tool for Amazon Web Services (AWS) Organizations and Service Control Policies (SCPs). It's built using the [AWS SDK for JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS.html).
 
-![](https://github.com/matthewdfuller/wut-dev-docs/blob/main/demo.gif)
+![](demo.gif)
 
 # Features
 * Tree-style visualization for AWS Organizations, Organization Units (OUs), and accounts
