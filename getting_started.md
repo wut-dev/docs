@@ -123,7 +123,7 @@ In this step, we'll assign the role a limited set of IAM permissions that grant 
       "Statement": [
         {
           "Action": "sts:AssumeRole",
-          "Resource": "arn:aws:iam::*:role/WutDotDevAccessRole",
+          "Resource": "arn:aws:iam::*:role/WutDotDev-Member",
           "Effect": "Allow"
         }
       ]
