@@ -1,0 +1,67 @@
+a {
+    color: #1b2432;
+}
+
+::selection {
+    background: #376882;
+}
+
+a:not([class]) {
+    text-decoration-color: #1b2432;
+}
+
+a:not([class]):hover {
+    text-decoration: none;
+}
+
+.icon {
+    color: #fff;
+}
+
+.main-content .anchor-heading svg {
+    color: #376882;
+}
+
+.site-header {
+    border-bottom: 0px;
+}
+
+.site-title:hover {
+    background-image: none;
+}
+
+.side-bar {
+    background-color: #376882;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover, .nav-list .nav-list-item .nav-list-link.active {
+    background-image: none;
+    background-color: white;
+    color: #376882;
+}
+
+.site-footer {
+    display: none;
+}
+
+.btn-purple {
+    background-color: #376882;
+    background-image: none;
+}
+
+.btn-purple:hover, .btn-purple.zeroclipboard-is-hover {
+    background-image: none;
+    background-color: #77788f;
+}
+
+.nav-list .nav-list-item .nav-list-expander {
+    color: #fff;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+    color: #fff
+}
+
+.nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-link {
+    color: #fff
+}

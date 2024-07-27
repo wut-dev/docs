@@ -1,0 +1,32 @@
+title: Wut.Dev | Docs
+description: Wut.Dev Documentation
+theme: just-the-docs
+
+url: https://docs.wut.dev
+
+aux_links:
+  App: https://wut.dev
+  Blog: https://blog.wut.dev
+
+logo: "/assets/images/logo.png"
+favicon_ico: "/assets/images/favicon.ico"
+color_scheme: light
+
+footer_content: "Copyright 2024 • Wut.Dev"
+
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: https://github.com/wut-dev/docs
+gh_edit_branch: "main"
+gh_edit_view_mode: "tree"
+
+callouts:
+  note:
+    title: Note
+    color: blue
+  warning:
+    title: Warning
+    color: yellow
+
+# twitter:
+#   username: WutDotDev
