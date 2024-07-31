@@ -65,3 +65,15 @@ a:not([class]):hover {
 .nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-link {
     color: #fff
 }
+
+.nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-link.active {
+    background-image: none;
+    background-color: white;
+    color: #376882;
+}
+
+.nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-link:hover {
+    background-image: none;
+    background-color: white;
+    color: #376882;
+}
