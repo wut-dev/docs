@@ -9,9 +9,13 @@ parent: Getting Started
 
 Once you have [configured Wut.Dev](/getting_started), engineers can authenticate their browser session by assuming the `WutDotDev-Mgmt` role (replace the `AccountId` with that of your AWS Organizations management account):
 
+```bash
+aws sts assume-role --role-arn arn:aws:iam::{AccountId}:role/WutDotDev-Mgmt --role-session-name WutDotDev --output json
 ```
-$ aws sts assume-role --role-arn arn:aws:iam::{AccountId}:role/WutDotDev-Mgmt --role-session-name WutDotDev --output json
 
+You'll see an output like the following:
+
+```json
 {
     "Credentials": {
         "AccessKeyId": "ASIAABCDEF1234567891",
