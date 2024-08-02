@@ -12,6 +12,16 @@ nav_order: 4
 ## Q. What do you mean by "client-side?"
 Wut.Dev is delivered via CDN as a static HTML/JavaScript/CSS page to your browser and all data is stored and processed locally. Communication with AWS occurs via the AWS JavaScript SDK. Wut.Dev does not have an API, or server-side component, meaning your data, and AWS credentials, never leave your local machine.
 
+## Q. How can I be sure my credentials are safe?
+Wut.Dev aims to provide as many safeguards as possible to ensure your AWS credentials are kept safe:
+1. Wut.Dev does not have an API, or server-side component, of the application (see above). Your credentials are never sent anywhere.
+1. Our documentation and setup automation strongly recommends the use of (temporary) IAM role sessions
+1. Our documentation includes the use of IP-restricted session policies; the credentials you paste into Wut.Dev can be locked to your IP only
+1. Our documentation recommends attaching the `SecurityAudit` policy, which is a well-scoped read-only AWS IAM policy created for security tools
+1. Wut.Dev does not load any third-party dependencies; all code is served directly from our domain
+1. Since Wut.Dev runs entirely in your browser, you can view all of the network traffic via the network tab
+1. You can verify in AWS CloudTrail the API calls that your credentials made, and that these calls originated from your IP address
+
 ## Q. What are the minimum requirements to use Wut.Dev?
 You need a browser, internet connection (to AWS), and IAM credentials to access certain read-only AWS APIs. We recommend the `SecurityAudit` managed policy, which grants limited access to your AWS account and resource metadata.
 
