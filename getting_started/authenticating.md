@@ -39,4 +39,19 @@ Copy the `AccessKeyId`, `SecretAccessKey`, and `SessionToken` into Wut.Dev's "Ma
 
 ![Save Credentials](../assets/images/save-creds.png)
 
-## Troubleshooting
+## CLI Quick Start
+Wut.Dev has a page, `/auth`, which accepts the URL parameter `?auth=` containing base64-encoded JSON credential payload (the output of `aws sts assume-role`). You can create a local CLI alias to make re-authenticating super simple.
+
+Be sure to replace `AccountId` in the command below.
+
+```bash
+alias wut-auth='open "http://wut.dev/auth?auth=$(aws sts assume-role --role-arn arn:aws:iam::{AccountId}:role/WutDotDev-Mgmt --role-session-name WutDotDev --output json --policy '\''{"Version": "2012-10-17","Statement": {"Effect": "Allow","Action": "*","Resource": "*","Condition": {"IpAddress": {"aws:SourceIp": "'\''$(curl -s http://checkip.amazonaws.com)'\''"}}}}'\'' | base64)"'
+```
+
+The above command:
+1. Assumes the `WutDotDev-Mgmt` role
+1. Passes a session policy locking the credentials to your IP address
+1. Converts the output to base64
+1. Passes this to the `/auth?auth=` Wut.Dev endpoint
+
+You can then save the credentials and use Wut.Dev.
