@@ -5,14 +5,15 @@ theme: just-the-docs
 url: https://docs.wut.dev
 
 aux_links:
-  App: https://wut.dev
+  Home: https://wut.dev
+  App: https://app.wut.dev
   Blog: https://blog.wut.dev
 
 logo: "/assets/images/logo.png"
 favicon_ico: "/assets/images/favicon.ico"
 color_scheme: light
 
-footer_content: "Copyright 2024 • Wut.Dev"
+footer_content: "Copyright 2025 • Wut.Dev"
 
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."

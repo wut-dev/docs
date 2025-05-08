@@ -7,7 +7,7 @@ parent: Features
 
 # Access Denied Debugger
 
-You can access the debugger at [wut.dev/error](https://wut.dev/error).
+You can access the debugger at [wut.dev/error](https://app.wut.dev/error).
 
 Wut.Dev helps debug AWS access denied error messages by:
 * Extracting the relevant parts of the message

@@ -18,13 +18,22 @@ Some things you'll need:
 
 ## Access Patterns
 
-Technically, Wut.Dev can work with any AWS account, but since many of its features are oriented around AWS Organizations, it's more useful to connect the management account. If you have multiple accounts, Wut.Dev can use the primary (or management) account's role to assume a role into each applicable member account.
+Technically, Wut.Dev can work with any AWS account, but since many of its features are oriented around AWS Organizations, it's more useful to connect the management account. If you have multiple accounts, Wut.Dev can use the primary (or management) account's role to assume a role into each applicable member account, eliminating the need to load credentials for all of your accounts individually.
+
+### Standalone Mode
+
+In standalone mode, you pass credentials for a single AWS account to Wut.Dev and browse as that user. See [Standalone Mode](/getting_started/standalone_mode) for more details.
+
+### Organization Mode
 
 ![Data Flow Diagram](assets/images/data-flow.png)
 
 Wut.Dev users (i.e. human engineers via an IAM entity) assume the `WutDotDev-Mgmt` role, passing the temporary credentials to Wut.Dev. The Wut.Dev application then transparently assumes the `WutDotDev-Member` role, in other accounts, when required.
 
 ## Wut.Dev Setup
+
+{: .warning }
+The following steps are for the Organization mode configuration. To get started quickly with a single account, we recommend [Standalone Mode](/getting_started/standalone_mode).
 
 There are several steps involved, which we'll walk through below:
 

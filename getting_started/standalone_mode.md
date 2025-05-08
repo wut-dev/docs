@@ -1,16 +1,16 @@
 ---
-title: Simple Mode
+title: Standalone Mode
 layout: default
 nav_order: 4
 parent: Getting Started
 ---
 
-# Simple Mode
+# Standalone Mode
 
 Many of Wut.Dev's features can be used by simply using your own credentials in a single AWS account. This is the quickest way to try out Wut.Dev without setting up roles and cross-account access in your AWS Organization.
 
 {: .warning }
-For cross-account, and Organization-related features, Wut.Dev will attempt to perform an "assume role" on a Wut.Dev-named role in the target account. These features will not work in simple mode.
+For cross-account, and Organization-related features, Wut.Dev will attempt to perform an "assume role" on a Wut.Dev-named role in the target account. These features will not work in standalone mode.
 
 ## Generate a Session
 

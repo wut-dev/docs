@@ -45,7 +45,7 @@ Wut.Dev has a page, `/auth`, which accepts the URL parameter `?auth=` containing
 Be sure to replace `AccountId` in the command below.
 
 ```bash
-alias wut-auth='open "http://wut.dev/auth?auth=$(aws sts assume-role --role-arn arn:aws:iam::{AccountId}:role/WutDotDev-Mgmt --role-session-name WutDotDev --output json --policy '\''{"Version": "2012-10-17","Statement": {"Effect": "Allow","Action": "*","Resource": "*","Condition": {"IpAddress": {"aws:SourceIp": "'\''$(curl -s http://checkip.amazonaws.com)'\''"}}}}'\'' | base64)"'
+alias wut-auth='open "http://app.wut.dev/auth?auth=$(aws sts assume-role --role-arn arn:aws:iam::{AccountId}:role/WutDotDev-Mgmt --role-session-name WutDotDev --output json --policy '\''{"Version": "2012-10-17","Statement": {"Effect": "Allow","Action": "*","Resource": "*","Condition": {"IpAddress": {"aws:SourceIp": "'\''$(curl -s http://checkip.amazonaws.com)'\''"}}}}'\'' | base64)"'
 ```
 
 The above command:

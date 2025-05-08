@@ -14,39 +14,29 @@ Wut.Dev is currently in beta. Please [report any issues](https://github.com/wut-
 
 _[w•u•t](https://en.wiktionary.org/wiki/wut) (interjection): A sound or expression made by developers in response to an unexpected or unclear error._
 
-[Wut.Dev](https://wut.dev) is a client-side platform for viewing, managing, and debugging AWS security policies, controls, and access issues related to AWS Organization Service Control Policies (SCPs), IAM policies, and resource policies.
+[Wut.Dev](https://wut.dev) is a client-side AWS console alternative for viewing, managing, debugging, and documenting AWS resources, logs, security policies, and controls.
 
-Think of Wut.Dev as a missing link between development and security teams, translating the amalgamation of policies, security controls, and error messages into meaningful next steps to unblock developers as they build their cloud applications.
+Wut's primary features are:
+* Consistent, unified read-only interface to access resources across all AWS services
+* Quick sorting, filtering, searching, and exporting of resources
+* Privacy-first, client-side execution model with no server-side dependencies
+* Multi-region, multi-account support (including switching between Organization member accounts)
+* View all of your AWS Organization OUs and accounts in an interactive tree diagram
+* Automated resource relationship diagrams (coming soon)
+* (Optional) LLM integration for policy analysis and documentation (also client-side via your own LLM API key)
 
 ## What does Wut.Dev do?
-Wut.dev's goal is to serve as the first place security and development teams turn to view and debug security, policy, or access issues in their AWS environment. See an issue, ask "wut!?"
+Wut.Dev provides an alternative means of view and interacting with AWS resources, logs, security policies, and controls with native features built for developers and security teams.
 
-Wut.Dev connects to your AWS Organization (and its member accounts) via a read-only audit role to extract Organization and account metadata, relationships, and policies. This information then powers features for both security and development teams:
+We want Wut.Dev to be the first place infrastructure and security teams turn to view resources, debug security, policy, or access issues, or otherwise gather data about their AWS environment. Need to know something? Ask "wut!?"
 
-* **AWS Organizations Viewer** - view all of your AWS Organization OUs and accounts in an interactive tree diagram
-    * **Account Move Simulator** - quickly evaluate the policy implications of moving an AWS account between OUs
-* **AWS Service Control Policy (SCP) Viewer** - view SCPs, policy content, tags, and targets
-    * **Policy Coverage Map** - single pane of glass for viewing SCP coverage across all accounts
-* **Access Denied Debugger** - paste an "access denied" error message to view a stack-trace-style overview of the relevant accounts, Organization policies, IAM principals, CloudTrail activity logs, and policy simulators
+Wut.Dev connects to your AWS account(s) via local (in browser only) AWS credentials and uses the client-side AWS SDK to make AWS API calls.
 
 ## Why should I use Wut.Dev?
 
-AWS security controls and IAM policy logic are complex, and your developers are likely spending hundreds of combined engineer-hours each month debugging opaque error messages like "access denied due to an implicit deny in a service control policy."
+The AWS console is a powerful tool, but it's not always the best tool for the job. It's bloated, slow, inconsistent, single-region, and single-account. Oftentimes, getting from "I know the thing I want to look at" to "I have the thing I want to look at" is a frustrating experience. Once you find the resource, you're then left correlating data sources from other places (logs from CloudTrail, policies from IAM, trusted resources from other accounts, etc.). Wut.Dev aims to bring these resources and data together in a cohesive, well-designed interface.
 
-Establishing secure cloud access patterns often means understanding how org-level, account-level, principal-level, _and_ resource-level security controls apply to a particular request. Developers may not even have access to (or even know where to find) each of these policies (which might be managed by other teams), making designing a successful request a guessing game of frustration.
-
-The result is increased support load on security teams, who now must work backwards to first understand the intent of the request, and then piece together how each of the controls they've written could potentially impact it.
-
-Most cloud security tools today are focused on surfacing and blocking security risks by proposing policy or controls to fix those risks. However, these tools often ignore the potential impact to developer productivity as the cloud environment becomes more locked down.
-
-### Benefits for Developers
-* Self-serve debugging of access issues
-* Easy-to-understand explanations of common AWS security controls
-* Links and redirects to alternative preferred access patterns
-* Quickly visualize AWS account environments and their contacts
-* Dynamically-updating live view of account relationships
-
-### Benefits for Security Teams
-* Less time spent debugging access issues for other teams
-* Enhanced operational safety guarantees when making low-level infrastructure changes, such as applying or modifying SCPs
-* Improved confidence in applying best-practice security controls
+Wut.Dev is also building the first (optionally) LLM-integrated cloud console. If / when AI is "right for the job," Wut.Dev will expose it in unobtrusive ways. Some examples of places we've found LLMs to be helpful include:
+* Summarizing log events
+* Explaining moderately-complex IAM and SCP policies
+* Understanding the logic in conditional statements in policies

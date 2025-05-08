@@ -5,18 +5,21 @@ nav_order: 6
 ---
 
 # Security
-Wut.Dev is a client-side platform for viewing, managing, and debugging AWS security policies, controls, and access issues related to AWS Organization Service Control Policies (SCPs), IAM policies, and resource policies.. To do this, Wut.Dev uses read-only access to take a limited snapshot of the metadata of your Organization structure, accounts, IAM principals, and policies.
+Wut.Dev is a read-only, privacy-focused, client-side resource explorer and debugging tool for viewing your AWS resources. There are no ads, trackers, analytics, or third-party hosted libraries. The AWS JavaScript SDK is used to make API calls directly to AWS from your browser. Wut.Dev has no API; you are browsing a static site. You can verify this by opening your browser's network panel and monitoring the network requests.
 
 The AWS JavaScript SDK is used to make these API calls directly to AWS from your browser. Wut.Dev has no API; you are browsing a static site. You can verify this by opening your browser's network panel and monitoring the network requests.
 
-## Credential Management
-When you enter your AWS credentials (access key, secret, and session token) on Wut.Dev, Wut.Dev assigns them to in-memory variables. This means that when the page is refreshed, or the tab is closed, the credentials are lost and must be re-entered.
+## Summary
+We collect as little information as possible to provide this service and have engineered it to work entirely within your browser, without any server-side components or dependencies that would require us to store or process your data.
 
-Optionally, Wut.Dev can cache your credentials in your browser's local storage so that they persist after a page refresh. Credentials are never sent elsewhere, and are used solely by the AWS SDK to sign API calls made to AWS endpoints.
+## Credential Management
+When you enter your AWS credentials (access key, secret, and session token) on wut.dev, they are cached in your browser's local storage so that they persist after a page refresh. Credentials are never sent elsewhere, and are used solely by the AWS SDK to sign API calls made to AWS endpoints.
 
 ## AWS Permissions
 
-The IAM entity you create for wut.dev must have access to the following AWS APIs in your Organization management account. We recommend using `organizations:list*` and `organizations:describe*`.
+Wut.Dev uses the identity of the credentials you enter, meaning it has whatever AWS permissions belong to that IAM entity. Picture it as the AWS CLI, just in your browser.
+
+For Organization-related features, the IAM entity you create for wut.dev must have access to the following AWS APIs in your Organization management account. We recommend using `organizations:list*` and `organizations:describe*`.
 
 * `organizations:listAccountsForParent`
 * `organizations:listTagsForResource`
@@ -59,3 +62,6 @@ These dependencies are minified and served from wut.dev's domain. There are no t
 When you access wut.dev, your IP address and user agent are logged by our CDN (AWS CloudFront). We do not log, or otherwise save, any other information about your usage of this site, including any information entered. There are no analytics, trackers, cookies, or other information used to view or record your session.
 
 If you choose to enter your email address to receive updates, this information is recorded by Google Forms. We do not sell, rent, lease, or otherwise reveal your information to any other parties unless required by law.
+
+## Legal
+Wut.Dev is not affiliated with, endorsed by, or in any way associated with AWS. AWS is a registered trademark of Amazon.com, Inc. Your use of Wut.Dev is your responsibility. We are not responsible for any damages or losses that may occur as a result of using this site. By using this site, you agree to indemnify and hold harmless the site owner and its affiliates from any claims, damages, or losses that may occur as a result of using this site.
