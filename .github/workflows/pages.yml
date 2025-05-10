@@ -10,6 +10,11 @@ on:
   push:
     branches: ["main"]
 
+env:
+  BUCKET_NAME : "wut-dev"
+  BUCKET_PATH : "docs"
+  AWS_REGION : "us-east-1"
+  
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -48,6 +53,16 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-session-name: GitHubActionsSession
+          aws-region: ${{ env.AWS_REGION }}
+      - name:  Upload Files
+        run: |
+          aws s3 cp ./_site s3://${{ env.BUCKET_NAME }}/${{ env.BUCKET_PATH }} --recursive
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DISTRIBUTION_ID }} --paths '/docs/*'
 
   # Deployment job
   deploy:
