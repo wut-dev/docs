@@ -29,5 +29,14 @@ callouts:
     title: Warning
     color: yellow
 
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      scripts:
+        - /assets/js/external-links.js
+
+
 # twitter:
 #   username: WutDotDev
